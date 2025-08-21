@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Nafeez Tech House] | digital marketing and social media management </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0d1a2f;
+            --secondary-color: #1a2a43;
+            --accent-color: #3b82f6;
+            --text-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        .slogan {
+            font-size: 0.8rem;
+            color: var(--text-color);
+            margin-left: 1rem;
+            font-weight: 300;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.3rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 5rem 5%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #home {
+            flex-direction: row;
+            justify-content: space-around;
+            text-align: left;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .home-content {
+            max-width: 50%;
+        }
+
+        .home-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .home-content p {
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .home-image {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        #home:hover .home-image {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .home-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-container p, .content-container ul {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .content-container ul {
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .content-container li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #contact .content-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        #contact .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        #contact .contact-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        #contact .contact-item a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem 5%;
+            }
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav li {
+                margin: 0.5rem 1rem;
+            }
+            .home-content h1 {
+                font-size: 3rem;
+            }
+            #home {
+                flex-direction: column;
+                text-align: center;
+            }
+            .home-content {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+        </a>
+        <span class="slogan">[Your Slogan Here]</span>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#digital-marketing">Digital Marketing</a></li>
+                <li><a href="#social-media">Social Media</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="home-content">
+                <h1>Hi, I'm [Your Name]</h1>
+                <p>A passionate graphic designer with a keen eye for detail and a love for creating beautiful, functional art.</p>
+            </div>
+            <div class="home-image">
+                <img src="images/hero.jpg" alt="Hero Image">
+            </div>
+        </section>
+
+        <section id="digital-marketing">
+            <h2 class="section-title">Digital Marketing Work</h2>
+            <div class="content-container">
+                <p>Welcome to my portfolio! Here's a glimpse into the diverse digital marketing projects I've worked on, including promotional materials and ad creatives.</p>
+                <div class="gallery">
+                    <img src="images/digital1.jpg" alt="Digital Marketing Design 1">
+                    <img src="images/digital2.jpg" alt="Digital Marketing Design 2">
+                    <img src="images/digital3.jpg" alt="Digital Marketing Design 3">
+                </div>
+            </div>
+        </section>
+
+        <section id="social-media">
+            <h2 class="section-title">Social Media Management Designs</h2>
+            <div class="content-container">
+                <p>A collection of my work focusing on engaging and cohesive designs for various social media platforms.</p>
+                <div class="gallery">
+                    <img src="images/social1.jpg" alt="Social Media Design 1">
+                    <img src="images/social2.jpg" alt="Social Media Design 2">
+                    <img src="images/social3.jpg" alt="Social Media Design 3">
+                    <img src="images/social4.jpg" alt="Social Media Design 4">
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">Services</h2>
+            <div class="content-container">
+                <p>I offer a range of creative services to help your brand stand out. My goal is to deliver high-quality work that not only looks great but also achieves your business objectives.</p>
+                <ul>
+                    <li><strong>Brand Identity & Logo Design:</strong> Crafting a unique and memorable visual identity.</li>
+                    <li><strong>Web & UI/UX Design:</strong> Creating intuitive and beautiful website and app interfaces.</li>
+                    <li><strong>Print & Marketing Materials:</strong> Designing business cards, brochures, flyers, and more.</li>
+                    <li><strong>Social Media Graphics:</strong> Producing engaging visuals for all your social platforms.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="content-container">
+                <p>Hello! I'm a freelance graphic designer with [Number] years of experience. I believe in the power of visual communication to tell a story and connect with an audience. My approach is collaborative, focusing on understanding your vision and translating it into a stunning design.</p>
+                <p>When I'm not designing, you can find me [Your hobby, e.g., sketching, exploring nature, or reading about art history]. I'm always eager to take on new challenges and help bring creative ideas to life. Let's build something amazing together!</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="content-container">
+                <p>Ready to start a project? I'd love to hear from you. Feel free to reach out via email or connect with me on social media.</p>
+                <div class="contact-item">
+                    <span>Email:</span> <a href="mailto:youremail@example.com">youremail@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>LinkedIn:</span> <a href="#">[Your LinkedIn]</a>
+                </div>
+                <div class="contact-item">
+                    <span>Behance:</span> <a href="#">[Your Behance Portfolio]</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
