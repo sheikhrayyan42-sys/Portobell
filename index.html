@@ -203,6 +203,12 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
+        
+        .gallery img.no-crop {
+            object-fit: contain;
+            width: auto;
+            height: 200px;
+        }
 
         .gallery img:hover {
             transform: scale(1.05);
@@ -299,7 +305,7 @@
                 <p>Welcome to my portfolio! Here's a glimpse into the diverse digital marketing projects I've worked on, including promotional materials and ad creatives.</p>
                 <div class="gallery">
                     <img src="digital1.jpg" alt="Digital Marketing Design 1">
-                    <img src="digital2.jpg" alt="Digital Marketing Design 2">
+                    <img src="digital2.jpg" alt="Digital Marketing Design 2" class="no-crop">
                     <img src="digital3.jpg" alt="Digital Marketing Design 3">
                 </div>
             </div>
