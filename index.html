@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nafeez Tech House | Digital Marketing & Social Media Management</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Nafeez Tech House] | digital marketing and social media management</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -15,10 +15,9 @@
     }
 
     body {
-      background: #fdfdfd;
+      background: #f9f9f9;
       color: #333;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     header {
@@ -26,12 +25,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: #111;
+      background: #222;
       color: #fff;
+      padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 40px;
       z-index: 1000;
     }
 
@@ -39,20 +38,19 @@
       height: 50px;
     }
 
-    nav ul {
-      list-style: none;
+    nav {
       display: flex;
       gap: 20px;
     }
 
-    nav ul li a {
+    nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
 
-    nav ul li a:hover {
+    nav a:hover {
       color: #ff9800;
     }
 
@@ -68,48 +66,38 @@
       width: 25px;
       background: #fff;
       margin: 4px 0;
-      transition: all 0.4s;
+      transition: 0.4s;
     }
 
+    /* Mobile Menu */
     .mobile-menu {
       display: none;
       flex-direction: column;
-      background: #111;
-      position: absolute;
-      top: 70px;
-      left: 0;
+      background: #222;
       width: 100%;
+      text-align: center;
       overflow: hidden;
       max-height: 0;
-      transition: max-height 0.5s ease;
+      transition: max-height 0.5s ease-in-out;
     }
 
-    .mobile-menu.open {
+    .mobile-menu.show {
       display: flex;
-      max-height: 300px;
+      max-height: 500px;
     }
 
     .mobile-menu a {
       padding: 15px;
-      border-top: 1px solid #222;
-      text-align: center;
       color: #fff;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .mobile-menu a:hover {
-      background: #ff9800;
-      color: #111;
+      border-top: 1px solid #333;
     }
 
     section {
-      min-height: 100vh;
       padding: 100px 20px;
       text-align: center;
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
+      transform: translateY(40px);
+      transition: all 1s ease-out;
     }
 
     section.show {
@@ -117,129 +105,137 @@
       transform: translateY(0);
     }
 
-    h1, h2, h3 {
+    section h1, section h2 {
       margin-bottom: 20px;
+      font-size: 2rem;
       font-weight: 600;
     }
 
-    p {
+    section p {
       max-width: 800px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
-    }
-
-    button, .btn {
-      padding: 12px 25px;
-      border: none;
-      background: #ff9800;
-      color: #fff;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    button:hover, .btn:hover {
-      background: #e68900;
-      transform: scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      margin: 0 auto 30px;
+      font-size: 1rem;
+      color: #555;
     }
 
     img {
       max-width: 100%;
-      border-radius: 12px;
-      transition: transform 0.4s, box-shadow 0.4s;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
     }
 
     img:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #ff9800;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background: #e68900;
+      transform: translateY(-3px);
     }
 
     footer {
-      background: #111;
+      background: #222;
       color: #fff;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
     }
 
+    /* Responsive */
     @media(max-width: 768px) {
-      nav ul {
+      nav {
         display: none;
       }
 
       .hamburger {
         display: flex;
       }
+
+      section h1, section h2 {
+        font-size: 1.5rem;
+      }
+
+      section p {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="your-logo.png" alt="Logo" />
+    <img src="your-logo.png" alt="Logo">
     <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">Our Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Our Services</a>
+      <a href="#contact">Contact</a>
     </nav>
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#services">Our Services</a>
-      <a href="#contact">Contact</a>
-    </div>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Our Services</a>
+    <a href="#contact">Contact</a>
+  </div>
 
   <section id="home">
     <h1>Welcome to Nafeez Tech House</h1>
-    <p>We specialize in digital marketing and social media management to grow your business online with modern strategies.</p>
-    <button>Get Started</button>
+    <p>Your trusted partner for digital marketing and social media management solutions.</p>
+    <a href="#contact" class="btn">Get Started</a>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>At Nafeez Tech House, we provide tailored digital marketing strategies designed to boost your brand presence. Our expert team ensures measurable growth across platforms.</p>
-    <img src="about-image.jpg" alt="About Image" />
+    <p>We specialize in delivering high-quality digital marketing and social media management services that help brands grow online.</p>
+    <img src="about-image.jpg" alt="About Us">
   </section>
 
   <section id="services">
     <h2>Our Services</h2>
-    <p>We offer complete social media management, SEO, paid campaigns, and branding solutions that help you stand out in the digital space.</p>
-    <img src="services-image.jpg" alt="Services Image" />
+    <p>From social media strategies to ad campaigns, we provide tailored solutions for your business needs.</p>
+    <img src="services-image.jpg" alt="Services">
   </section>
 
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Get in touch with us today to discuss your project and see how we can help your business grow!</p>
-    <p>Email: info@nafeeztechhouse.com</p>
-    <p>Phone: +92 300 1234567</p>
+    <h2>Contact</h2>
+    <p>Email us at: <strong>info@nafeeztechhouse.com</strong><br>
+       Call us: <strong>+92 300 1234567</strong></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Nafeez Tech House. All rights reserved.</p>
+    <p>&copy; 2025 Nafeez Tech House. All Rights Reserved.</p>
   </footer>
 
   <script>
+    // Hamburger toggle
     function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('open');
+      document.getElementById("mobileMenu").classList.toggle("show");
     }
 
     // Scroll animations
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', () => {
-      const triggerBottom = window.innerHeight * 0.8;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if(sectionTop < triggerBottom) {
-          section.classList.add('show');
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.classList.add("show");
         }
       });
     });
