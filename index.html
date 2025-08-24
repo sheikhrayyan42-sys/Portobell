@@ -29,9 +29,10 @@
       overflow-x: hidden;
     }
 
+    /* ✅ Header */
     header {
       background-color: var(--secondary-color);
-      padding: 1rem 5%;
+      padding: 0.7rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -43,7 +44,7 @@
     }
 
     .logo img {
-      height: 70px;
+      height: 55px;
       border-radius: 5px;
     }
 
@@ -61,7 +62,7 @@
     }
 
     nav li {
-      margin-left: 2rem;
+      margin-left: 1.2rem;
     }
 
     nav a {
@@ -71,6 +72,7 @@
       position: relative;
       padding-bottom: 0.3rem;
       transition: color 0.3s ease;
+      font-size: 0.95rem;
     }
 
     nav a::after {
@@ -92,6 +94,7 @@
       width: 100%;
     }
 
+    /* ✅ Sections */
     section {
       padding: 5rem 5%;
       min-height: 100vh;
@@ -102,7 +105,13 @@
       text-align: center;
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    #about {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      min-height: auto;
     }
 
     section.visible {
@@ -124,20 +133,20 @@
     }
 
     .home-content h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 700;
       color: var(--accent-color);
       margin-bottom: 1rem;
     }
 
     .home-content p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 300;
     }
 
     .home-image {
-      width: 350px;
-      height: 350px;
+      width: 320px;
+      height: 320px;
       border-radius: 50%;
       background-color: var(--secondary-color);
       display: flex;
@@ -160,7 +169,7 @@
     }
 
     .section-title {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--accent-color);
       margin-bottom: 2rem;
@@ -171,9 +180,10 @@
       margin: 0 auto;
     }
 
-    .content-container p, .content-container ul {
+    .content-container p,
+    .content-container ul {
       margin-bottom: 1.5rem;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     .content-container ul {
@@ -193,7 +203,7 @@
     }
 
     .gallery img {
-      width: 300px;
+      width: 280px;
       height: 200px;
       object-fit: cover;
       border-radius: 10px;
@@ -223,7 +233,7 @@
       align-items: center;
       gap: 1rem;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       flex-wrap: wrap;
     }
 
@@ -237,66 +247,71 @@
       color: var(--accent-color);
     }
 
-    /* 📱 Responsive */
+    /* 📱 Responsive Fix */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 0.5rem 1rem;
       }
+
+      .logo img {
+        height: 45px;
+      }
+
       nav ul {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0;
       }
+
       nav li {
-        margin: 0.5rem 1rem;
+        margin: 0.3rem 0.8rem;
       }
+
+      nav a {
+        font-size: 0.85rem;
+      }
+
+      .slogan {
+        font-size: 0.7rem;
+        margin: 0.4rem 0;
+      }
+
       .home-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         text-align: center;
       }
+
       #home {
         flex-direction: column;
         text-align: center;
       }
+
       .home-content {
         max-width: 100%;
         margin-bottom: 2rem;
       }
+
       .home-image {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
       }
+
       .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
+
       .gallery img {
         width: 100%;
         max-width: 100%;
         height: auto;
+        transform: none !important;
+        box-shadow: none !important;
       }
     }
-    @media (max-width: 768px) {
-    header {
-        padding: 10px 15px;   /* kam padding */
-    }
-
-    header h1 {
-        font-size: 20px;      /* chhota text */
-    }
-
-    nav ul {
-        flex-direction: column; /* agar ul li horizontal nahi ban raha */
-        gap: 8px;              /* items ke darmiyan thoda space */
-    }
-
-    nav ul li a {
-        font-size: 14px;      /* links chhoti kar do */
-        padding: 6px 10px;
-    }
-}
   </style>
 </head>
 <body>
@@ -318,35 +333,35 @@
   </header>
 
   <main>
-    <!-- Home -->
+    <!-- ✅ Home -->
     <section id="home">
       <div class="home-content">
         <h1>Hi, I'm Umair Nafees</h1>
-        <p>I’m the founder of Nafeez Tech House, where we bring ideas to life through technology and creativity...</p>
+        <p>I’m the founder of Nafeez Tech House, where we bring ideas to life through technology and creativity. What started as a passion for building and designing has grown into a space where businesses find solutions that actually work, whether it’s a website that stands out, designs that tell a story, or marketing that gets real results.</p>
       </div>
       <div class="home-image">
         <img src="hero.jpg" alt="Hero Image">
       </div>
     </section>
 
-    <!-- Digital Marketing -->
+    <!-- ✅ Digital Marketing -->
     <section id="digital-marketing">
       <h2 class="section-title">Digital Marketing Work</h2>
       <div class="content-container">
-        <p>Welcome to my portfolio! Here's a glimpse...</p>
+        <p>Welcome to my portfolio! Here's a glimpse into the diverse digital marketing projects I've worked on.</p>
         <div class="gallery">
           <img src="digital1.jpg" alt="Digital Marketing Design 1">
-          <img src="digital2.jpg" class="no-crop" alt="Digital Marketing Design 2">
+          <img src="digital2.jpg" alt="Digital Marketing Design 2" class="no-crop">
           <img src="digital3.jpg" alt="Digital Marketing Design 3">
         </div>
       </div>
     </section>
 
-    <!-- Social Media -->
+    <!-- ✅ Social Media -->
     <section id="social-media">
       <h2 class="section-title">Social Media Management Designs</h2>
       <div class="content-container">
-        <p>A collection of my work focusing...</p>
+        <p>A collection of my work focusing on engaging and cohesive designs for various social media platforms.</p>
         <div class="gallery">
           <img src="social1.jpg" alt="Social Media Design 1">
           <img src="social2.jpg" alt="Social Media Design 2">
@@ -356,40 +371,44 @@
       </div>
     </section>
 
-    <!-- Services -->
+    <!-- ✅ Services -->
     <section id="services">
       <h2 class="section-title">Our Services</h2>
       <div class="content-container">
         <ul>
           <li><strong>Website Design & Development:</strong> Modern, responsive, and user-friendly websites.</li>
-          <li><strong>Digital Marketing & Social Media Management:</strong> Grow your brand effectively.</li>
+          <li><strong>Digital Marketing & Social Media Management:</strong> Full digital marketing strategies.</li>
           <li><strong>Email Marketing Campaigns:</strong> Convert leads into loyal customers.</li>
-          <li><strong>Graphic Design & Branding:</strong> Creative visuals and strong brand identities.</li>
-          <li><strong>Video Editing & Multimedia Solutions:</strong> Engaging content with impact.</li>
+          <li><strong>Graphic Design & Branding:</strong> Creative visuals and brand identities.</li>
+          <li><strong>Video Editing & Multimedia Solutions:</strong> Engaging content that tells your story.</li>
         </ul>
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ✅ About -->
     <section id="about">
       <h2 class="section-title">About Us</h2>
       <div class="content-container">
-        <p>At Nafeez Tech House, we believe in turning ideas into impactful digital solutions...</p>
+        <p>At Nafeez Tech House, we believe in turning ideas into impactful digital solutions that make a difference. From websites to marketing strategies, we craft meaningful experiences that help brands stand out and succeed.</p>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ✅ Contact -->
     <section id="contact">
       <h2 class="section-title">Contact Us</h2>
       <div class="content-container">
+        <p>Ready to start a project? I'd love to hear from you.</p>
         <div class="contact-item">
-          <span>Email:</span> <a href="mailto:nafeeztechhouse@gmail.com">nafeeztechhouse@gmail.com</a>
+          <span>Email:</span>
+          <a href="mailto:nafeeztechhouse@gmail.com">nafeeztechhouse@gmail.com</a>
         </div>
         <div class="contact-item">
-          <span>Instagram:</span> <a href="https://www.instagram.com/nafeeztech">nafeeztech</a>
+          <span>Instagram:</span>
+          <a href="https://www.instagram.com/nafeeztech">nafeeztech</a>
         </div>
         <div class="contact-item">
-          <span>WhatsApp:</span> <a href="https://wa.me/923032470138">+92 3032470138</a>
+          <span>WhatsApp:</span>
+          <a href="https://wa.me/923032470138">+92 3032470138</a>
         </div>
       </div>
     </section>
@@ -397,7 +416,8 @@
 
   <script>
     const sections = document.querySelectorAll('section');
-    const observerOptions = { threshold: 0.1 };
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -406,6 +426,7 @@
         }
       });
     }, observerOptions);
+
     sections.forEach(section => observer.observe(section));
   </script>
 </body>
