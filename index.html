@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Nafeez Tech House] | digital marketing and social media management </title>
-  <style>
+<style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
     :root {
@@ -29,6 +29,7 @@
         overflow-x: hidden;
     }
 
+    /* ===== Header ===== */
     header {
         background-color: var(--secondary-color);
         padding: 1rem 5%;
@@ -39,7 +40,7 @@
         top: 0;
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        flex-wrap: wrap; /* FIX */
+        flex-wrap: wrap;
     }
 
     .logo img {
@@ -95,6 +96,7 @@
         width: 100%;
     }
 
+    /* ===== Sections (with animation) ===== */
     section {
         padding: 4rem 5%;
         display: flex;
@@ -102,14 +104,26 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+
+        opacity: 0; /* hidden initially */
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
+    section.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ===== Home Section ===== */
     #home {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
         text-align: left;
-        flex-wrap: wrap; /* FIX */
+        flex-wrap: wrap;
+        opacity: 1;
+        transform: translateY(0); /* hero always visible */
     }
 
     .home-content {
@@ -139,6 +153,12 @@
         align-items: center;
         overflow: hidden;
         margin-top: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #home:hover .home-image {
+        transform: scale(1.05) rotate(5deg);
     }
 
     .home-image img {
@@ -147,6 +167,7 @@
         object-fit: cover;
     }
 
+    /* ===== Titles & Content ===== */
     .section-title {
         font-size: 2.2rem;
         font-weight: 700;
@@ -169,6 +190,7 @@
         padding-left: 1.2rem;
     }
 
+    /* ===== Gallery ===== */
     .gallery {
         display: flex;
         flex-wrap: wrap;
@@ -178,11 +200,18 @@
 
     .gallery img {
         width: 100%;
-        max-width: 280px;
+        max-width: 280px; /* desktop fix */
         height: auto;
         border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    /* ===== Contact Section ===== */
     #contact .content-container {
         display: flex;
         flex-direction: column;
@@ -206,7 +235,7 @@
         color: var(--accent-color);
     }
 
-    /* 📱 Mobile Fixes */
+    /* ===== Responsive (Mobile) ===== */
     @media (max-width: 768px) {
         header {
             flex-direction: column;
@@ -230,8 +259,12 @@
         .section-title {
             font-size: 1.8rem;
         }
+        .gallery img {
+            max-width: 100%; /* mobile full width */
+        }
     }
 </style>
+
 
 </head>
 <body>
