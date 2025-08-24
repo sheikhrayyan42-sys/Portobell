@@ -3,154 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Nafeez Tech House] | Digital Marketing and Social Media Management</title>
+  <title>[Nafeez Tech House] | digital marketing and social media management </title>
   <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #0f172a; color: #fff; overflow-x: hidden; }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-    /* Header */
-    header { width: 100%; background: #1e293b; padding: 15px 20px; position: sticky; top: 0; z-index: 1000; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.4rem; font-weight: 700; }
-    nav { display: flex; gap: 20px; }
-    nav a { color: #fff; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
-    nav a:hover { color: #38bdf8; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0d1b2a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0a192f;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #4da8da;
+    }
 
     /* Hamburger */
-    .hamburger { display: none; font-size: 1.8rem; cursor: pointer; user-select: none; }
-
-    /* Mobile Nav */
-    .mobile-nav {
-      display: flex;
+    .hamburger {
+      display: none;
       flex-direction: column;
-      background: #1e293b;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.4s ease-in-out;
-    }
-    .mobile-nav a {
-      padding: 12px;
-      border-top: 1px solid #334155;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .mobile-nav a:hover { background: #334155; }
-    .mobile-nav.open { max-height: 500px; }
-
-    /* Hero */
-    .hero { text-align: center; padding: 60px 20px; }
-    .hero h2 { font-size: 2.5rem; color: #60a5fa; margin-bottom: 15px; animation: fadeInUp 1s ease; }
-    .hero p { max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.6; animation: fadeInUp 1.3s ease; }
-
-    @keyframes fadeInUp {
-      from { opacity:0; transform: translateY(20px); }
-      to { opacity:1; transform: translateY(0); }
-    }
-
-    /* Sections */
-    section { padding: 50px 20px; max-width: 1000px; margin: auto; }
-    section h2 { font-size: 2rem; color: #38bdf8; margin-bottom: 15px; }
-    section p { font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
-
-    /* Gallery */
-    .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 20px; }
-    .gallery img {
-      width: 300px;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
-    .gallery img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+    .hamburger span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      transition: 0.4s;
     }
 
-    /* Footer */
-    footer { text-align: center; padding: 20px; background: #1e293b; margin-top: 40px; font-size: 0.9rem; color: #94a3b8; }
+    /* Mobile Menu */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #0a192f;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease;
+    }
+
+    .mobile-nav.show {
+      display: flex;
+      max-height: 400px;
+    }
+
+    .mobile-nav a {
+      padding: 15px;
+      border-top: 1px solid #1f4068;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+
+    .mobile-nav a:hover {
+      background: #1b2a49;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 120px 20px 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      color: #4da8da;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: 18px;
+      color: #dcdcdc;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #4da8da;
+    }
+
+    section p {
+      max-width: 900px;
+      margin: auto;
+      color: #dcdcdc;
+    }
+
+    footer {
+      background: #0a192f;
+      padding: 20px;
+      text-align: center;
+      margin-top: 40px;
+      color: #aaa;
+    }
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav { display: none; }
-      .hamburger { display: block; }
-      .hero h2 { font-size: 2rem; }
-      .gallery img { width: 100%; max-width: 100%; transform: none !important; box-shadow: none; }
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
+
   <header>
-    <div class="nav-container">
-      <div class="logo">Nafeez Tech House</div>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#services">Our Services</a>
-        <a href="#contact">Contact Info</a>
-      </nav>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-    </div>
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#">Home</a>
+    <div class="logo">NAFEEZ</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#digital">Digital Marketing</a>
+      <a href="#social">Social Media</a>
+      <a href="#services">Services</a>
       <a href="#about">About Us</a>
-      <a href="#services">Our Services</a>
-      <a href="#contact">Contact Info</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Welcome to Nafeez Tech House</h2>
-    <p>We provide professional digital marketing and social media management services to help your business grow and reach a wider audience.</p>
+  <div class="mobile-nav" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#digital">Digital Marketing</a>
+    <a href="#social">Social Media</a>
+    <a href="#services">Services</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+
+  <section class="hero" id="home">
+    <h1>Hi, I'm Umair Nafees</h1>
+    <p>I’m the founder of Nafeez Tech House, where we bring ideas to life through technology and creativity. 
+    What started as a passion for building and designing has grown into a space where businesses find solutions 
+    that actually work, whether it’s digital marketing, social media growth, or branding strategies.</p>
   </section>
 
-  <!-- About Us -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Nafeez Tech House is a leading digital marketing and social media management company. Our team is dedicated to providing innovative solutions that drive results and help brands connect with their audience effectively.</p>
+  <section id="digital">
+    <h2>Digital Marketing</h2>
+    <p>We provide complete digital marketing services including SEO, PPC, content marketing, and analytics 
+    to grow your online presence and increase ROI.</p>
   </section>
 
-  <!-- Services -->
+  <section id="social">
+    <h2>Social Media</h2>
+    <p>We help you build your brand across social platforms with engaging content, growth strategies, 
+    and targeted campaigns that convert.</p>
+  </section>
+
   <section id="services">
     <h2>Our Services</h2>
-    <p>We offer a wide range of services including:</p>
-    <ul>
-      <li>Social Media Management</li>
-      <li>Search Engine Optimization (SEO)</li>
-      <li>Content Creation</li>
-      <li>Paid Advertising Campaigns</li>
-      <li>Brand Strategy & Growth</li>
-    </ul>
+    <p>From branding and design to social media and marketing, we provide end-to-end solutions to help 
+    businesses stand out and succeed in the digital world.</p>
   </section>
 
-  <!-- Gallery -->
-  <section class="gallery">
-    <img src="https://via.placeholder.com/300" alt="Sample 1">
-    <img src="https://via.placeholder.com/300" alt="Sample 2">
-    <img src="https://via.placeholder.com/300" alt="Sample 3">
-    <img src="https://via.placeholder.com/300" alt="Sample 4">
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Nafeez Tech House, we believe in combining creativity with strategy. Our mission is to empower 
+    businesses by providing tailored digital solutions that make a real difference.</p>
   </section>
 
-  <!-- Contact Info -->
   <section id="contact">
-    <h2>Contact Info</h2>
-    <p>Email: info@nafeeztechhouse.com</p>
-    <p>Phone: +92 300 1234567</p>
-    <p>Address: Karachi, Pakistan</p>
+    <h2>Contact Us</h2>
+    <p>Email: info@nafeeztechhouse.com | Phone: +92 300 1234567</p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 Nafeez Tech House. All rights reserved.</p>
+    <p>© 2025 Nafeez Tech House. All Rights Reserved.</p>
   </footer>
 
   <script>
     function toggleMenu() {
-      const nav = document.getElementById("mobileNav");
-      nav.classList.toggle("open");
+      document.getElementById("mobileMenu").classList.toggle("show");
     }
   </script>
+
 </body>
 </html>
