@@ -15,23 +15,21 @@
     }
 
     body {
+      line-height: 1.6;
       background: #f9f9f9;
       color: #333;
-      line-height: 1.6;
     }
 
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #222;
+      background: #0d1b2a;
       color: #fff;
-      padding: 15px 40px;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
     }
 
     header img {
@@ -47,11 +45,11 @@
       color: #fff;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #ff9800;
+      color: #ffcc00;
     }
 
     /* Hamburger */
@@ -59,93 +57,82 @@
       display: none;
       flex-direction: column;
       cursor: pointer;
+      gap: 5px;
     }
 
-    .hamburger span {
-      height: 3px;
+    .hamburger div {
       width: 25px;
-      background: #fff;
-      margin: 4px 0;
-      transition: 0.4s;
+      height: 3px;
+      background: white;
+      transition: all 0.3s ease;
     }
 
     /* Mobile Menu */
-    .mobile-menu {
+    .mobile-nav {
       display: none;
       flex-direction: column;
-      background: #222;
+      background: #0d1b2a;
+      position: absolute;
+      top: 70px;
+      left: 0;
       width: 100%;
-      text-align: center;
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.5s ease-in-out;
+      animation: slideDown 0.4s ease forwards;
     }
 
-    .mobile-menu.show {
-      display: flex;
-      max-height: 500px;
-    }
-
-    .mobile-menu a {
-      padding: 15px;
+    .mobile-nav a {
       color: #fff;
+      padding: 15px;
       border-top: 1px solid #333;
-    }
-
-    section {
-      padding: 100px 20px;
       text-align: center;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 1s ease-out;
     }
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    section h1, section h2 {
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeUp 1s ease;
+    }
+
+    section:nth-child(even) {
+      background: #fff;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
       margin-bottom: 20px;
-      font-size: 2rem;
-      font-weight: 600;
+      color: #0d1b2a;
     }
 
-    section p {
-      max-width: 800px;
-      margin: 0 auto 30px;
-      font-size: 1rem;
-      color: #555;
+    p {
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 20px;
     }
 
     img {
       max-width: 100%;
       height: auto;
+      margin-top: 20px;
       border-radius: 10px;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
 
     img:hover {
       transform: scale(1.05);
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #ff9800;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .btn:hover {
-      background: #e68900;
-      transform: translateY(-3px);
-    }
-
+    /* Footer */
     footer {
-      background: #222;
+      background: #0d1b2a;
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -156,17 +143,11 @@
       nav {
         display: none;
       }
-
       .hamburger {
         display: flex;
       }
-
-      section h1, section h2 {
-        font-size: 1.5rem;
-      }
-
-      section p {
-        font-size: 0.95rem;
+      .mobile-nav.active {
+        display: flex;
       }
     }
   </style>
@@ -174,71 +155,61 @@
 <body>
 
   <header>
-    <img src="your-logo.png" alt="Logo">
+    <img src="logo.png" alt="Nafeez Tech House Logo">
     <nav>
-      <a href="#home">Home</a>
       <a href="#about">About Us</a>
       <a href="#services">Our Services</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#home">Home</a>
+  <div class="mobile-nav" id="mobileMenu">
     <a href="#about">About Us</a>
     <a href="#services">Our Services</a>
     <a href="#contact">Contact</a>
   </div>
 
-  <section id="home">
+  <!-- Hero -->
+  <section id="hero">
     <h1>Welcome to Nafeez Tech House</h1>
-    <p>Your trusted partner for digital marketing and social media management solutions.</p>
-    <a href="#contact" class="btn">Get Started</a>
+    <p>We specialize in digital marketing and social media management to grow your business.</p>
+    <img src="hero-image.jpg" alt="Digital Marketing">
   </section>
 
+  <!-- About -->
   <section id="about">
     <h2>About Us</h2>
-    <p>We specialize in delivering high-quality digital marketing and social media management services that help brands grow online.</p>
-    <img src="about-image.jpg" alt="About Us">
+    <p>At Nafeez Tech House, we believe in delivering innovative solutions for your digital presence. Our team is dedicated to providing the best strategies for your online success.</p>
+    <img src="about-image.jpg" alt="About Nafeez Tech House">
   </section>
 
+  <!-- Services -->
   <section id="services">
     <h2>Our Services</h2>
-    <p>From social media strategies to ad campaigns, we provide tailored solutions for your business needs.</p>
-    <img src="services-image.jpg" alt="Services">
+    <p>We offer a wide range of digital services including social media management, SEO optimization, content creation, and paid advertising to help your brand shine online.</p>
+    <img src="services-image.jpg" alt="Our Services">
   </section>
 
+  <!-- Contact -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email us at: <strong>info@nafeeztechhouse.com</strong><br>
-       Call us: <strong>+92 300 1234567</strong></p>
+    <h2>Contact Us</h2>
+    <p>Email: info@nafeeztechhouse.com</p>
+    <p>Phone: +92 300 1234567</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Nafeez Tech House. All Rights Reserved.</p>
+    <p>&copy; 2025 Nafeez Tech House. All rights reserved.</p>
   </footer>
 
   <script>
-    // Hamburger toggle
     function toggleMenu() {
-      document.getElementById("mobileMenu").classList.toggle("show");
+      document.getElementById('mobileMenu').classList.toggle('active');
     }
-
-    // Scroll animations
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => {
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          sec.classList.add("show");
-        }
-      });
-    });
   </script>
 </body>
 </html>
