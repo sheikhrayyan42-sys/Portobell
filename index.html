@@ -26,7 +26,7 @@
       background-color: var(--primary-color);
       color: var(--text-color);
       line-height: 1.6;
-      overflow-x: hidden; /* fix horizontal scroll */
+      overflow-x: hidden;
     }
 
     header {
@@ -102,13 +102,7 @@
       text-align: center;
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    #about {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-      min-height: auto;
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
     section.visible {
@@ -177,8 +171,7 @@
       margin: 0 auto;
     }
 
-    .content-container p,
-    .content-container ul {
+    .content-container p, .content-container ul {
       margin-bottom: 1.5rem;
       font-size: 1.1rem;
     }
@@ -251,167 +244,150 @@
         align-items: center;
         text-align: center;
       }
-
       nav ul {
         margin-top: 1rem;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0;
       }
-
       nav li {
         margin: 0.5rem 1rem;
       }
-
       .home-content h1 {
         font-size: 2.5rem;
         text-align: center;
       }
-
       #home {
         flex-direction: column;
         text-align: center;
       }
-
       .home-content {
         max-width: 100%;
         margin-bottom: 2rem;
       }
-
       .home-image {
         width: 250px;
         height: 250px;
       }
-
       .section-title {
         font-size: 2rem;
       }
-
       .gallery img {
         width: 100%;
         max-width: 100%;
         height: auto;
-        transform: none !important;
-        box-shadow: none !important;
       }
     }
   </style>
 </head>
 <body>
-<header>
-  <a href="#home" class="logo">
-    <img src="logo1.png" alt="Logo">
-  </a>
-  <span class="slogan">The Excellence You Deserve, We Provide</span>
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#digital-marketing">Digital Marketing</a></li>
-      <li><a href="#social-media">Social Media</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <!-- Same sections with your original text -->
-  <!-- Home -->
-  <section id="home">
-    <div class="home-content">
-      <h1>Hi, I'm Umair Nafees</h1>
-      <p>I’m the founder of Nafeez Tech House, where we bring ideas to life through technology and creativity. What started ,as a passion for building and designing has grown into a space where businesses find solutions that actually work, whether it’s a website that stands out, designs that tell a story, or marketing that gets real results. For me, it’s not just about creating digital products.It’s about helping people and brands grow, connect, and leave a mark in the digital world.</p>
-    </div>
-    <div class="home-image">
-      <img src="hero.jpg" alt="Hero Image">
-    </div>
-  </section>
-
-  <!-- Digital Marketing -->
-  <section id="digital-marketing">
-    <h2 class="section-title">Digital Marketing Work</h2>
-    <div class="content-container">
-      <p>Welcome to my portfolio! Here's a glimpse into the diverse digital marketing projects I've worked on, including promotional materials and ad creatives.</p>
-      <div class="gallery">
-        <img src="digital1.jpg" alt="Digital Marketing Design 1">
-        <img src="digital2.jpg" alt="Digital Marketing Design 2" class="no-crop">
-        <img src="digital3.jpg" alt="Digital Marketing Design 3">
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Media -->
-  <section id="social-media">
-    <h2 class="section-title">Social Media Management Designs</h2>
-    <div class="content-container">
-      <p>A collection of my work focusing on engaging and cohesive designs for various social media platforms.</p>
-      <div class="gallery">
-        <img src="social1.jpg" alt="Social Media Design 1">
-        <img src="social2.jpg" alt="Social Media Design 2">
-        <img src="social3.jpg" alt="Social Media Design 3">
-        <img src="social4.jpg" alt="Social Media Design 4">
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <h2 class="section-title">Our Services</h2>
-    <div class="content-container">
-      <p>We specialize in delivering end-to-end digital solutions tailored to meet the unique needs of every client:</p>
+  <header>
+    <a href="#home" class="logo">
+      <img src="logo1.png" alt="Logo">
+    </a>
+    <span class="slogan">The Excellence You Deserve, We Provide</span>
+    <nav>
       <ul>
-        <li><strong>Website Design & Development:</strong>Modern, responsive, and user-friendly websites that bring your brand to life.</li>
-        <li><strong>Digital Marketing & Social Media Management:</strong>Digital Marketing & Social Media Management</li>
-        <li><strong>Email Marketing Campaigns:</strong>Targeted campaigns designed to convert leads into loyal customers.</li>
-        <li><strong>Graphic Design & Branding:</strong>Creative visuals and brand identities that leave a lasting impression.</li>
-        <li><strong>Video Editing & Multimedia Solutions:</strong>Engaging content that tells your story with impact.</li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#digital-marketing">Digital Marketing</a></li>
+        <li><a href="#social-media">Social Media</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
-    </div>
-  </section>
+    </nav>
+  </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2 class="section-title">About Us</h2>
-    <div class="content-container">
-      <p>At Nafeez Tech House, we believe in turning ideas into impactful digital solutions that truly make a difference. As a forward-thinking software house, our mission is to empower businesses with technology that drives growth, boosts efficiency, and sparks innovation. From websites that captivate to marketing strategies that deliver measurable results, we go beyond providing services, we craft meaningful experiences that help brands stand out and build stronger digital identities. Every project we take on is guided by creativity, strategy, and a genuine commitment to seeing our clients succeed in an ever-evolving digital world.</p>
-    </div>
-  </section>
+  <main>
+    <!-- Home -->
+    <section id="home">
+      <div class="home-content">
+        <h1>Hi, I'm Umair Nafees</h1>
+        <p>I’m the founder of Nafeez Tech House, where we bring ideas to life through technology and creativity...</p>
+      </div>
+      <div class="home-image">
+        <img src="hero.jpg" alt="Hero Image">
+      </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <div class="content-container">
-      <p>Ready to start a project? I'd love to hear from you. Feel free to reach out via email or connect with me on social media.</p>
-      <div class="contact-item">
-        <span>Email:</span>
-        <a href="mailto:nafeeztechhouse@gmail.com">nafeeztechhouse@gmail.com</a>
+    <!-- Digital Marketing -->
+    <section id="digital-marketing">
+      <h2 class="section-title">Digital Marketing Work</h2>
+      <div class="content-container">
+        <p>Welcome to my portfolio! Here's a glimpse...</p>
+        <div class="gallery">
+          <img src="digital1.jpg" alt="Digital Marketing Design 1">
+          <img src="digital2.jpg" class="no-crop" alt="Digital Marketing Design 2">
+          <img src="digital3.jpg" alt="Digital Marketing Design 3">
+        </div>
       </div>
-      <div class="contact-item">
-        <span>Instagram:</span>
-        <a href="https://www.instagram.com/nafeeztech">nafeeztech</a>
-      </div>
-      <div class="contact-item">
-        <span>WhatsApp:</span>
-        <a href="https://wa.me/923032470138">+92 3032470138</a>
-      </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<script>
-  const sections = document.querySelectorAll('section');
-  const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-  sections.forEach(section => observer.observe(section));
-</script>
+    <!-- Social Media -->
+    <section id="social-media">
+      <h2 class="section-title">Social Media Management Designs</h2>
+      <div class="content-container">
+        <p>A collection of my work focusing...</p>
+        <div class="gallery">
+          <img src="social1.jpg" alt="Social Media Design 1">
+          <img src="social2.jpg" alt="Social Media Design 2">
+          <img src="social3.jpg" alt="Social Media Design 3">
+          <img src="social4.jpg" alt="Social Media Design 4">
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2 class="section-title">Our Services</h2>
+      <div class="content-container">
+        <ul>
+          <li><strong>Website Design & Development:</strong> Modern, responsive, and user-friendly websites.</li>
+          <li><strong>Digital Marketing & Social Media Management:</strong> Grow your brand effectively.</li>
+          <li><strong>Email Marketing Campaigns:</strong> Convert leads into loyal customers.</li>
+          <li><strong>Graphic Design & Branding:</strong> Creative visuals and strong brand identities.</li>
+          <li><strong>Video Editing & Multimedia Solutions:</strong> Engaging content with impact.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <div class="content-container">
+        <p>At Nafeez Tech House, we believe in turning ideas into impactful digital solutions...</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="content-container">
+        <div class="contact-item">
+          <span>Email:</span> <a href="mailto:nafeeztechhouse@gmail.com">nafeeztechhouse@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>Instagram:</span> <a href="https://www.instagram.com/nafeeztech">nafeeztech</a>
+        </div>
+        <div class="contact-item">
+          <span>WhatsApp:</span> <a href="https://wa.me/923032470138">+92 3032470138</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
-
